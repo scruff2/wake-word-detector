@@ -13,17 +13,6 @@ local voice applications. The command-line app is included for standalone
 testing, tuning, and troubleshooting before embedding the detector in a larger
 assistant or automation project.
 
-## Features
-
-- Fully local microphone capture and transcription
-- Configurable wake phrases, model, device, compute type, chunk size, overlap,
-  VAD threshold, fuzzy matching, logging, and chime behavior
-- Simple energy-based VAD to skip silent chunks
-- Regex wake phrase matching with word boundaries
-- Optional fuzzy matching for near misses
-- Importable detector components for future projects
-- CLI entry point for standalone testing
-
 ## Why Transcription-Based Wake Phrases
 
 Many wake-word systems require a dedicated trained model for each supported
@@ -46,6 +35,17 @@ has several practical advantages:
 The tradeoff is that this approach is heavier than a tiny dedicated wake-word
 model. It uses more CPU/GPU and usually has higher latency, but it is flexible,
 private, and straightforward to adapt.
+
+## Features
+
+- Fully local microphone capture and transcription
+- Configurable wake phrases, model, device, compute type, chunk size, overlap,
+  VAD threshold, fuzzy matching, logging, and chime behavior
+- Simple energy-based VAD to skip silent chunks
+- Regex wake phrase matching with word boundaries
+- Optional fuzzy matching for near misses
+- Importable detector components for future projects
+- CLI entry point for standalone testing
 
 ## Requirements
 
