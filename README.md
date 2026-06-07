@@ -8,6 +8,11 @@ short overlapping microphone windows, checks transcripts for configured wake
 phrases, and triggers a small local handler. The default handler writes a
 console log and plays a chime.
 
+The primary intent is to use this package as a reusable module inside other
+local voice applications. The command-line app is included for standalone
+testing, tuning, and troubleshooting before embedding the detector in a larger
+assistant or automation project.
+
 ## Features
 
 - Fully local microphone capture and transcription
