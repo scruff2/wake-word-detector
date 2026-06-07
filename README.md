@@ -24,6 +24,29 @@ assistant or automation project.
 - Importable detector components for future projects
 - CLI entry point for standalone testing
 
+## Why Transcription-Based Wake Phrases
+
+Many wake-word systems require a dedicated trained model for each supported
+word or phrase. That works well for highly optimized fixed wake words, but it
+can make custom phrases harder to support because every new phrase may need
+recordings, training, validation, and model packaging.
+
+This project takes a different approach: it transcribes short local audio
+windows with Whisper, then searches the transcript for configured phrases. That
+has several practical advantages:
+
+- Wake phrases can be changed in config without training a new model.
+- Multi-word phrases are supported the same way as single words.
+- Multiple alternative phrases can run at the same time.
+- Phrase matching can use normal text tools such as regex boundaries and
+  optional fuzzy matching.
+- The detector can log transcripts, which makes tuning and debugging easier.
+- The same module can support many downstream apps with different wake phrases.
+
+The tradeoff is that this approach is heavier than a tiny dedicated wake-word
+model. It uses more CPU/GPU and usually has higher latency, but it is flexible,
+private, and straightforward to adapt.
+
 ## Requirements
 
 - Python 3.9+
