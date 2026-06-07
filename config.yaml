@@ -1,0 +1,15 @@
+model: tiny.en
+compute_type: int8
+device: cpu
+language: en
+wake_phrases:
+  - "computer"
+chunk_seconds: 2.0
+overlap_seconds: 0.8
+sample_rate: 16000
+vad_energy_threshold: 0.01
+fuzzy_threshold: 0
+cooldown_seconds: 2.0
+debug: false
+log_file:
+chime: true
